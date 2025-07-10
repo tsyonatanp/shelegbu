@@ -108,7 +108,7 @@ const Testimonials = () => {
         </motion.div>
 
         {/* Main Testimonial Display */}
-        <div className="relative max-w-4xl mx-auto">
+        <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <AnimatePresence mode="wait">
               <motion.div
@@ -117,7 +117,7 @@ const Testimonials = () => {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -50 }}
                 transition={{ duration: 0.5 }}
-                className="p-8 md:p-12"
+                className="p-6 sm:p-8 md:p-12"
               >
                 {/* Quote Icon */}
                 <Quote className="text-primary-200 mx-auto mb-6" size={48} />
@@ -128,7 +128,7 @@ const Testimonials = () => {
                 </div>
 
                 {/* Testimonial Content */}
-                <blockquote className="text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-8 italic">
+                <blockquote className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-6 sm:mb-8 italic">
                   "{testimonials[currentTestimonial].content}"
                 </blockquote>
 
@@ -155,24 +155,41 @@ const Testimonials = () => {
             </AnimatePresence>
           </div>
 
-          {/* Navigation Arrows */}
+          {/* Navigation Arrows - Hidden on small screens */}
           <button
             onClick={prevTestimonial}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-primary-50 transition-colors duration-200 group"
+            className="hidden sm:block absolute left-2 lg:left-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 lg:p-3 hover:bg-primary-50 transition-colors duration-200 group"
           >
-            <ChevronLeft className="text-gray-600 group-hover:text-primary-600" size={24} />
+            <ChevronLeft className="text-gray-600 group-hover:text-primary-600" size={20} />
           </button>
           
           <button
             onClick={nextTestimonial}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-3 hover:bg-primary-50 transition-colors duration-200 group"
+            className="hidden sm:block absolute right-2 lg:right-4 top-1/2 transform -translate-y-1/2 bg-white shadow-lg rounded-full p-2 lg:p-3 hover:bg-primary-50 transition-colors duration-200 group"
           >
-            <ChevronRight className="text-gray-600 group-hover:text-primary-600" size={24} />
+            <ChevronRight className="text-gray-600 group-hover:text-primary-600" size={20} />
+          </button>
+        </div>
+
+        {/* Mobile Navigation Buttons */}
+        <div className="flex sm:hidden justify-center gap-4 mt-6">
+          <button
+            onClick={prevTestimonial}
+            className="bg-white shadow-lg rounded-full p-3 hover:bg-primary-50 transition-colors duration-200 group"
+          >
+            <ChevronLeft className="text-gray-600 group-hover:text-primary-600" size={20} />
+          </button>
+          
+          <button
+            onClick={nextTestimonial}
+            className="bg-white shadow-lg rounded-full p-3 hover:bg-primary-50 transition-colors duration-200 group"
+          >
+            <ChevronRight className="text-gray-600 group-hover:text-primary-600" size={20} />
           </button>
         </div>
 
         {/* Dots Indicator */}
-        <div className="flex justify-center mt-8 gap-2">
+        <div className="flex justify-center mt-6 sm:mt-8 gap-2">
           {testimonials.map((_, index) => (
             <button
               key={index}

@@ -196,7 +196,7 @@ const Services = () => {
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 0.9, opacity: 0 }}
                 onClick={(e) => e.stopPropagation()}
-                className="bg-white rounded-2xl p-8 max-w-2xl w-full max-h-[80vh] overflow-y-auto"
+                className="bg-white rounded-2xl p-6 sm:p-8 max-w-xs sm:max-w-2xl w-full mx-4 max-h-[80vh] overflow-y-auto"
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex items-center gap-4">

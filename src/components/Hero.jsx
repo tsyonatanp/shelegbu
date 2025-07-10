@@ -21,21 +21,21 @@ const Hero = () => {
       ></div>
       
       {/* Content */}
-      <div className="relative z-10 container-max text-center text-white">
+      <div className="relative z-10 container-max text-center text-white px-4">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="max-w-4xl mx-auto"
         >
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 leading-tight">
             ניהול ואחזקת מבנים
-            <span className="block text-3xl md:text-5xl text-blue-300 mt-2">
+            <span className="block text-2xl sm:text-3xl md:text-5xl text-blue-300 mt-2">
               כמו שצריך
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl mb-8 text-gray-200 leading-relaxed px-4">
             פתרונות מקצועיים ומותאמים אישית לניהול הבניין שלכם
             <span className="block mt-2">זמינות 24/7 • שקיפות מלאה • מחירים הוגנים</span>
           </p>
@@ -45,7 +45,7 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-wrap justify-center gap-6 mb-10"
+            className="flex flex-wrap justify-center gap-3 sm:gap-6 mb-10 px-4"
           >
             {[
               'מאות בניינים מרוצים',
@@ -53,9 +53,9 @@ const Hero = () => {
               'אפליקציה לדיירים',
               'ליווי משפטי כלול'
             ].map((benefit, index) => (
-              <div key={index} className="flex items-center gap-2 bg-white bg-opacity-10 px-4 py-2 rounded-full backdrop-blur-sm">
-                <CheckCircle className="text-green-400" size={20} />
-                <span className="text-sm md:text-base font-medium">{benefit}</span>
+              <div key={index} className="flex items-center gap-2 bg-white bg-opacity-10 px-3 sm:px-4 py-2 rounded-full backdrop-blur-sm">
+                <CheckCircle className="text-green-400" size={16} />
+                <span className="text-xs sm:text-sm md:text-base font-medium">{benefit}</span>
               </div>
             ))}
           </motion.div>
@@ -65,21 +65,21 @@ const Hero = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
           >
             <button
               onClick={scrollToContact}
-              className="btn-primary text-lg px-8 py-4 flex items-center gap-3 shadow-2xl hover:scale-105 transform transition-all duration-300"
+              className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 flex items-center gap-3 shadow-2xl hover:scale-105 transform transition-all duration-300 w-full sm:w-auto"
             >
-              <Mail size={24} />
+              <Mail size={20} />
               לקבלת הצעת מחיר
             </button>
             
             <a
               href="tel:+972547274527"
-              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-medium py-4 px-8 rounded-lg transition-all duration-300 flex items-center gap-3"
+              className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-gray-900 font-medium py-3 sm:py-4 px-6 sm:px-8 rounded-lg transition-all duration-300 flex items-center gap-3 w-full sm:w-auto justify-center"
             >
-              <Phone size={24} />
+              <Phone size={20} />
               חייגו עכשיו
             </a>
           </motion.div>
