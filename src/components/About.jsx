@@ -10,13 +10,13 @@ const About = () => {
     { icon: Users, number: 'צוות', label: 'מנוסה ואמין' },
   ]
 
-  const clientLogos = [
-    'בניין הדקל 15',
-    'מתחם גני שושנה',
-    'רחוב הרצל 42',
-    'שכונת נווה צדק',
-    'מגדלי אביב',
-    'פארק המדע'
+  const serviceAreas = [
+    'בניינים מגורים',
+    'בניינים משרדים',
+    'פרויקטים צעירים',
+    'מתחמים קטנים',
+    'מבנים מיוחדים',
+    'פרויקטים חדשים'
   ]
 
   return (
@@ -38,18 +38,18 @@ const About = () => {
             <div className="space-y-6 text-gray-700 leading-relaxed">
               <p className="text-lg">
                 <strong className="text-gray-900">שלג - ניהול מבנים</strong> הוקמה מתוך הבנה עמוקה שניהול מבנים איכותי 
-                דורש מקצועיות, שקיפות וזמינות מתמדת. אנחנו מביאים פתרון מותאם לכל בניין ודיירים מרוצים הם המטרה שלנו.
+                דורש מקצועיות, שקיפות וזמינות מתמדת. כחברה צעירה וחדשה, אנחנו מספקים שירות אישי ומחירים הוגנים.
               </p>
               
               <p>
-                עם צוות מקצועי מנוסה, אנחנו מספקים שירותי ניהול מקיפים 
+                הצוות שלנו מביא ידע מקצועי מהתחום, ואנחנו מספקים שירותי ניהול מקיפים 
                 החל מניהול שוטף ועד ליווי משפטי מלא. הגישה שלנו מתבססת על שקיפות מוחלטת, דוחות מפורטים ואפליקציה 
                 חכמה לדיירים.
               </p>
               
               <p>
-                <strong className="text-primary-600">למה דיירים בוחרים בנו?</strong> כי אנחנו מבינים שבית זה לא רק מקום מגורים, 
-                זה המקום הבטוח שלכם. אנחנו כאן כדי לשמור על הנכס שלכם, להעלות את הערך שלו ולדאג שתהיו שקטים.
+                <strong className="text-primary-600">למה דיירים יבחרו בנו?</strong> כי אנחנו מבינים שבית זה לא רק מקום מגורים, 
+                זה המקום הבטוח שלכם. כחברה חדשה אנחנו מספקים שירות אישי ותשומת לב למידע פרט שחברות גדולות לא יכולות לספק.
               </p>
             </div>
 
@@ -94,17 +94,17 @@ const About = () => {
               <h3 className="text-xl font-semibold text-gray-900 mb-2">יונתן פנחסי</h3>
               <p className="text-gray-600 mb-3">מנהל ומייסד החברה</p>
               <p className="text-sm text-gray-700">
-                "ניסיון רב בניהול מבנים ומחויבות מלאה לשביעות רצון הדיירים"
+                "אנחנו מתחילים עם חזון ברור - לספק שירות מקצועי, אישי ובמחירים הוגנים"
               </p>
             </div>
 
-            {/* Client Logos */}
+            {/* Service Areas */}
             <div className="bg-white rounded-2xl shadow-xl p-6">
               <h3 className="text-lg font-semibold text-gray-900 mb-4 text-center">
-                הם כבר סומכים עלינו
+                סוגי מבנים שאנחנו מטפלים בהם
               </h3>
               <div className="grid grid-cols-2 gap-4">
-                {clientLogos.map((client, index) => (
+                {serviceAreas.map((area, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, scale: 0.9 }}
@@ -113,7 +113,7 @@ const About = () => {
                     viewport={{ once: true }}
                     className="bg-gray-50 p-3 rounded-lg text-center text-sm font-medium text-gray-700 border border-gray-200"
                   >
-                    {client}
+                    {area}
                   </motion.div>
                 ))}
               </div>

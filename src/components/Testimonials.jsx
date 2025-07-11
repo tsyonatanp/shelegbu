@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ChevronLeft, ChevronRight, Star, Quote } from 'lucide-react'
+import { ChevronLeft, ChevronRight, Star, Quote, CheckCircle } from 'lucide-react'
 
 const Testimonials = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
@@ -8,57 +8,45 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: 'רונית לוי',
-      building: 'בניין רחוב הרצל 42',
-      role: 'יו"ר ועד בית',
-      content: 'אחרי שנים של בעיות עם חברות ניהול קודמות, שלג הביאו לנו שקט נפשי אמיתי. הם מקצועיים, זמינים ושקופים לחלוטין. כל דייר בבניין מרוצה מהשירות.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'שקיפות מלאה',
+      content: 'דיירים מעוניינים לדעת בדיוק לאן הולך הכסף שלהם ומה נעשה בבניין. דוחות מפורטים וגישה לכל המידע הם בסיס לאמון.',
+      icon: 'transparency',
+      color: 'from-blue-500 to-blue-600'
     },
     {
       id: 2,
-      name: 'משה כהן',
-      building: 'מתחם גני שושנה',
-      role: 'דייר במתחם',
-      content: 'האפליקציה שלהם פשוט מהפכנית! אני יכול לראות בזמן אמת מה קורה בבניין, לדווח על תקלות ולקבל עדכונים. השירות מעולה וההנהלה תמיד זמינה.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'זמינות וזמן תגובה',
+      content: 'כשיש בעיה בבניין, דיירים רוצים לדעת שמישהו יטפל בזה מהר. זמינות 24/7 לחירום וזמן תגובה מהיר הם קריטיים.',
+      icon: 'availability',
+      color: 'from-green-500 to-green-600'
     },
     {
       id: 3,
-      name: 'שרה אברהם',
-      building: 'בניין הדקל 15',
-      role: 'חברת ועד בית',
-      content: 'המחירים הוגנים והשירות מקצועי. הם הצליחו לחסוך לנו כסף על ספקים ובאותו זמן לשפר את רמת השירות. בעיקר מרוצה מהזמינות שלהם גם בסופי שבוע.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'מחירים הוגנים',
+      content: 'כולם רוצים איכות אבל לא בכל מחיר. חברת ניהול טובה מספקת שירות מעולה במחיר הוגן ושקוף, ללא עלויות נסתרות.',
+      icon: 'pricing',
+      color: 'from-purple-500 to-purple-600'
     },
     {
       id: 4,
-      name: 'דוד ישראלי',
-      building: 'שכונת נווה צדק',
-      role: 'יו"ר ועד בית',
-      content: 'החלטנו להחליף לשלג אחרי המלצה של חבר. הייתי קצת חושש מהמעבר אבל הם טיפלו בהכל בצורה מקצועית. היום אני ממליץ עליהם לכל מי שמחפש ניהול איכותי.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'תקשורת ברורה',
+      content: 'דיירים רוצים לדעת מה קורה בבניין שלהם. עדכונים סדירים, הסברים ברורים ותקשורת פתוחה הם מה שיוצר אמון.',
+      icon: 'communication',
+      color: 'from-orange-500 to-orange-600'
     },
     {
       id: 5,
-      name: 'מירי גולדברג',
-      building: 'מגדלי אביב',
-      role: 'דיירת במגדל',
-      content: 'אחרי 3 שנים עם שלג אני יכולה להגיד בביטחון - זו ההחלטה הטובה ביותר שקיבלנו. הבניין נראה מעולה, הדיירים מרוצים והעלויות תחת כל הביקורת.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'מקצועיות וניסיון',
+      content: 'דיירים מחפשים צוות שמבין את העבודה - מהתחזוקה הבסיסית ועד הנושאים המשפטיים המורכבים.',
+      icon: 'expertise',
+      color: 'from-indigo-500 to-indigo-600'
     },
     {
       id: 6,
-      name: 'יוסי פרידמן',
-      building: 'פארק המדע',
-      role: 'מנהל קהילה',
-      content: 'כמנהל של קהילה גדולה, אני צריך שותף אמין לניהול הנכסים. שלג מספקים בדיוק את זה - מקצועיות, אמינות ושירות ברמה הגבוהה ביותר.',
-      rating: 5,
-      image: 'https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&auto=format&fit=crop&w=387&q=80'
+      title: 'שירות אישי',
+      content: 'כל בניין הוא שונה ויש לו צרכים מיוחדים. גישה אישית ומותאמת לכל בניין זה מה שמבדיל חברת ניהול טובה.',
+      icon: 'personal',
+      color: 'from-red-500 to-red-600'
     }
   ]
 
@@ -78,16 +66,6 @@ const Testimonials = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)
   }
 
-  const renderStars = (rating) => {
-    return Array.from({ length: 5 }, (_, i) => (
-      <Star
-        key={i}
-        size={20}
-        className={`${i < rating ? 'text-yellow-400 fill-current' : 'text-gray-300'}`}
-      />
-    ))
-  }
-
   return (
     <section id="testimonials" className="section-padding bg-gradient-to-br from-primary-50 to-white">
       <div className="container-max">
@@ -99,15 +77,15 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            מה אומרים עלינו?
-            <span className="block text-primary-600 mt-2">המלצות אמיתיות מדיירים מרוצים</span>
+            מה דיירים מחפשים?
+            <span className="block text-primary-600 mt-2">הדברים שהכי חשובים בחברת ניהול מבנים</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            בניינים רבים בוחרים בנו. הנה מה שיש להם להגיד
+            מה דיירים אוהבים בחברות ניהול מבנים מקצועיות
           </p>
         </motion.div>
 
-        {/* Main Testimonial Display */}
+        {/* Main Content Display */}
         <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
             <AnimatePresence mode="wait">
@@ -119,36 +97,25 @@ const Testimonials = () => {
                 transition={{ duration: 0.5 }}
                 className="p-6 sm:p-8 md:p-12"
               >
-                {/* Quote Icon */}
-                <Quote className="text-primary-200 mx-auto mb-6" size={48} />
+                {/* Icon */}
+                <div className={`bg-gradient-to-r ${testimonials[currentTestimonial].color} rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-6`}>
+                  <CheckCircle className="text-white" size={32} />
+                </div>
                 
-                {/* Stars */}
-                <div className="flex justify-center mb-6">
-                  {renderStars(testimonials[currentTestimonial].rating)}
+                {/* Title */}
+                <h3 className="text-2xl font-bold text-gray-900 text-center mb-6">
+                  {testimonials[currentTestimonial].title}
+                </h3>
+
+                {/* Content */}
+                <div className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-6 sm:mb-8">
+                  {testimonials[currentTestimonial].content}
                 </div>
 
-                {/* Testimonial Content */}
-                <blockquote className="text-base sm:text-lg md:text-xl text-gray-700 leading-relaxed text-center mb-6 sm:mb-8 italic">
-                  "{testimonials[currentTestimonial].content}"
-                </blockquote>
-
-                {/* Author Info */}
-                <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-                  <img
-                    src={testimonials[currentTestimonial].image}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full object-cover border-4 border-primary-200"
-                  />
-                  <div className="text-center md:text-right">
-                    <div className="font-bold text-gray-900 text-lg">
-                      {testimonials[currentTestimonial].name}
-                    </div>
-                    <div className="text-primary-600 font-medium">
-                      {testimonials[currentTestimonial].role}
-                    </div>
-                    <div className="text-gray-600 text-sm">
-                      {testimonials[currentTestimonial].building}
-                    </div>
+                {/* Bottom indicator */}
+                <div className="flex justify-center">
+                  <div className="bg-primary-100 text-primary-600 px-4 py-2 rounded-full font-medium text-sm">
+                    נקודה {currentTestimonial + 1} מתוך {testimonials.length}
                   </div>
                 </div>
               </motion.div>
@@ -217,12 +184,12 @@ const Testimonials = () => {
               <div className="text-gray-700">זמינות לחירום</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">5★</div>
-              <div className="text-gray-700">דירוג מעולה</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">שקיפות</div>
+              <div className="text-gray-700">מלאה</div>
             </div>
             <div>
-              <div className="text-3xl font-bold text-primary-600 mb-2">ניסיון</div>
-              <div className="text-gray-700">מוכח</div>
+              <div className="text-3xl font-bold text-primary-600 mb-2">מחירים</div>
+              <div className="text-gray-700">הוגנים</div>
             </div>
           </div>
         </motion.div>
